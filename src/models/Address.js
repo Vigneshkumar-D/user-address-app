@@ -21,7 +21,7 @@ const Address = sequelize.define('Address', {
     allowNull: false,
   },
   zipCode: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
   country: {
@@ -37,7 +37,6 @@ const Address = sequelize.define('Address', {
   },
 });
 
-// Relationship: One User has many Addresses
 User.hasMany(Address, { foreignKey: 'userId' });
 Address.belongsTo(User, { foreignKey: 'userId' });
 
